@@ -81,7 +81,7 @@ app.post("/login", async (req, res) => {
 });
 
 // Middleware to check if user is authenticated
-function isAuthenticated(req, res, next) {
+async function isAuthenticated(req, res, next) {
     if (req.session && req.session.user) {
         return next(); // User is authenticated, proceed to the next middleware
     } else {
